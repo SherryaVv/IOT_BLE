@@ -1,0 +1,81 @@
+<view class="cate">
+    <!-- 医生 -->
+    <view class="cate_container">
+        <scroll-view scroll-y class="left">
+            <view class="menu_item {{current===index?'active':''}}" wx:for="{{left_list}}" wx:key="*this" bindtap="handleindex" data-index="{{index}}">
+                {{item}}
+
+            </view>
+        </scroll-view>
+        <scroll-view scroll-y class="right" scroll-top="{{scrollTOP}}">
+            <view class="goods_group" wx:for="{{right_content}}" wx:for-index="index1" wx:for-item="item1">
+                <view class="goods_title">
+                    <view class="delimiter">
+                        {{item1.cat_name}}
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 病人 -->
+    <!-- 参数命名和医生的完全一样，需要修改一下各自的逻辑，因为样式是一样的不影响就直接搬过来了 -->
+    <!-- <view class="cate_container">
+        <scroll-view scroll-y class="left">
+            <view class="menu_item {{current===index?'active':''}}" wx:for="{{left_list}}" wx:key="*this" bindtap="handleindex" data-index="{{index}}">
+                {{item}}
+            </view>
+        </scroll-view>
+        <scroll-view scroll-y class="right" scroll-top="{{scrollTOP}}">
+            <view class="goods_group" wx:for="{{right_content}}" wx:for-index="index1" wx:for-item="item1">
+                <view class="goods_title">
+                    <view class="delimiter">
+                        {{item1.cat_name}}
+                    </view>
+                </view>
+                <view class="goods_list">
+                    <navigator wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_id">
+                        <image class="" src="{{item2.cat_icon}}" mode="widthFix">
+
+                        </image>
+                        <view class="goods_name">
+                            {{item2.cat_name}}
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view> -->
+</view>
+<view class="bottom_bar">
+    <view class="tab_box" bindtap="goIndex">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/news.png" />
+        <block wx:if="{{flag==1}}">
+            <text  class="tab_text">最新消息</text>
+        </block>
+        <block wx:else>
+            <text  class="tab_text">监测</text>
+        </block>
+    </view>
+    <view class="tab_box" bindtap="goList">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/patient_list.png" />
+        <block wx:if="{{flag==1}}">
+            <text  class="tab_text">病人列表</text>
+        </block>
+        <block wx:else>
+            <text  class="tab_text">档案</text>
+        </block>
+    </view>
+    <view class="tab_box" bindtap="goSearch">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/ask_doctor.png" />
+        <block wx:if="{{flag==1}}">
+            <text  class="tab_text">沟通</text>
+        </block>
+        <block wx:else>
+            <text  class="tab_text">咨询</text>
+        </block>
+    </view>
+    <view class="tab_box" bindtap="goCenter">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/member_center.png" />
+        <text class="tab_text">个人中心</text>
+    </view>
+</view>

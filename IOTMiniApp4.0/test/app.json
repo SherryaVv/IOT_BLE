@@ -1,0 +1,38 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/detailA/detailA",
+        "pages/ec-try/ec-try",
+        "pages/data/data",
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/goods_list/goods_list",
+        "pages/catelog/catelog",
+        "pages/service/service",
+        "pages/characteristic/characteristic",
+        "pages/com/com",
+        "pages/search/search",
+        "pages/search1/search1",
+        
+        "pages/logs/logs",
+        "pages/chat/chat"
+    ],
+    "window": {
+        "navigationBarTitleText": "肺功能训练监测",
+        "navigationBarBackgroundColor":"#1818A7",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#F8F7EE"
+    },
+    "subPackages": [
+        {
+          "root": "packageA",
+          "pages": [
+            "pages/chat/chat",
+            "pages/detail/detail"
+          ]
+        }
+    ],
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,107 @@
+<SINPUT>
+</SINPUT>
+<Tab tabs="{{tabs}}" binditemchange="itemChange">
+    <block wx:if="{{tabs[0].isactive}}">
+        <scroll-view scroll-y class="scroll" style="height:60%">
+            <view class="first_tab">
+                <view class="goods_item" >
+                    <!-- 左侧图片 -->
+                    <navigator class="goods_img_wrap" url="/pages/detail/detail?id={{item._id}}&user={{user}}&mylikes={{my_likes[index]}}&mycollects={{my_collects[index]}}" open-type="navigate">
+                        <image src="../../icon/tab41.png" mode="widthFix" style="max-height: 150px;min-height: 130px;">
+                        </image>
+                    </navigator>
+                    <!-- 右侧 -->
+                    <view class="goods_info_wrap" bindtap="toChat">
+                        <view class="goods_name">刘xx</view>
+                        <view class="goods_price">地址： 上海市 普陀区</view>
+                        <view class="goods_price">开始治疗时间： 2020-12-15</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <text class="iconfont icon-zuijinyuedu"></text>
+    </block>
+    <block wx:if="{{tabs[1].isactive}}">
+        <scroll-view scroll-y class="scroll" style="height:60%">
+            <view class="first_tab">
+                <view class="goods_item" >
+                    <!-- 左侧图片 -->
+                    <navigator class="goods_img_wrap" url="/pages/detail/detail?id={{item._id}}&user={{user}}&mylikes={{my_likes[index]}}&mycollects={{my_collects[index]}}" open-type="navigate">
+                        <image src="../../icon/jiance1.jpg" mode="widthFix" style="max-height: 150px;min-height: 130px;">
+                        </image>
+                    </navigator>
+                    <!-- 右侧 -->
+                    <view class="goods_info_wrap">
+                        <view class="goods_name">刘xx</view>
+                        <view class="goods_price">测量时间： 2020-12-17 10:34</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <text class="iconfont icon-zuijinyuedu"></text>
+    </block>
+</Tab>
+
+<!-- 病人 -->
+<!-- 变量有冲突，需要修改js -->
+<!-- <Tab tabs="{{tabs}}" binditemchange="itemChange">
+    <block wx:if="{{tabs[0].isactive}}">
+        <scroll-view scroll-y class="scroll" style="height:60%">
+            <view class="first_tab">
+                <view class="goods_item" >
+                    <navigator class="goods_img_wrap" url="/pages/detail/detail?id={{item._id}}&user={{user}}&mylikes={{my_likes[index]}}&mycollects={{my_collects[index]}}" open-type="navigate">
+                        <image src="../../icon/doc.jpg" mode="widthFix" style="max-height: 150px;min-height: 130px;">
+                        </image>
+                    </navigator>
+                    <view class="goods_info_wrap">
+                        <view class="goods_name">贺医生</view>
+                        <view class="goods_price">上海xx医院呼吸科主任医师</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <text class="iconfont icon-zuijinyuedu"></text>
+    </block>
+    <block wx:elif="{{tabs[1].isactive}}">
+        <block >
+            <view class="pinglunss">
+            <text>建议1：</text>
+            <text>注意生活方面的照顾，饮食方面可能导致哮喘发作的食物，应该避免去接触，房间里要特别注意环境的管理，应该尽量保持房间的清洁，在哮喘其他的生活方面，比如尽量避免接触油烟，尤其是避免接触香烟，吸烟或者二手烟对哮喘是需要绝对避免的。</text>
+            </view>
+            </block>
+    </block>
+</Tab> -->
+
+<view class="bottom_bar">
+    <view class="tab_box" bindtap="goIndex">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/news.png" />
+        <block wx:if="{{flag==1}}">
+            <text  class="tab_text">最新消息</text>
+        </block>
+        <block wx:else>
+            <text  class="tab_text">监测</text>
+        </block>
+    </view>
+    <view class="tab_box" bindtap="goList">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/patient_list.png" />
+        <block wx:if="{{flag==1}}">
+            <text  class="tab_text">病人列表</text>
+        </block>
+        <block wx:else>
+            <text  class="tab_text">档案</text>
+        </block>
+    </view>
+    <view class="tab_box" bindtap="goSearch">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/ask_doctor.png" />
+        <block wx:if="{{flag==1}}">
+            <text  class="tab_text">沟通</text>
+        </block>
+        <block wx:else>
+            <text  class="tab_text">咨询</text>
+        </block>
+    </view>
+    <view class="tab_box" bindtap="goCenter">
+        <image class="tab_icon" mode="aspectFill" src="../../icon/member_center.png" />
+        <text  class="tab_text">个人中心</text>
+    </view>
+</view>
